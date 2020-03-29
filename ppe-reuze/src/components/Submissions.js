@@ -4,7 +4,7 @@ import Amplify, { API, graphqlOperation } from 'aws-amplify';
 import config from '../aws-exports';
 Amplify.configure(config)
 
-const listSubmissions = `query listTodos {
+const listSubmissions = `query listSubmissions {
     listSubmissions{
       items{
         id
@@ -56,11 +56,11 @@ class Submissions extends React.Component {
             case "surgical":
                 return <SurgicalMask />
             case "latex":
-                return "Latex Gloves";
+                return <LatexGloves />
             case "nitrile":
-                return "Nitrile Gloves";
+                return <NitrileGloves />
             case "gowns":
-                return "Gowns";
+                return <Gowns />
             default:
                 return ""
         }
@@ -134,6 +134,9 @@ class Submissions extends React.Component {
     }
 }
 
+
+// Recommendations start here
+
 function N95() {
     return (
     <div className="card">
@@ -154,6 +157,63 @@ function N95() {
 }
 
 function SurgicalMask() {
+    return (
+    <div className="card">
+        <div className="card-content">
+            <div className="media">
+                <div className="media-content">
+                    <p className="title is-4 has-text-black">Don't Reuse</p>
+                    <p className="subtitle is-6 has-text-black">Reuze Team</p>
+                </div>
+            </div>
+            <div className="content">
+            Surgical masks may be worn continuously until visibly soiled or moist from respirations.
+            They should be carefully folded so that the outer surface is held inward and against itself to reduce contact with the outer surface during storage. The folded mask can be stored between uses in a clean, sealable paper bag or breathable container.<br />
+            </div>
+        </div>
+    </div>
+    )
+}
+
+function LatexGloves() {
+    return (
+    <div className="card">
+        <div className="card-content">
+            <div className="media">
+                <div className="media-content">
+                    <p className="title is-4 has-text-black">Don't Reuse</p>
+                    <p className="subtitle is-6 has-text-black">Reuze Team</p>
+                </div>
+            </div>
+            <div className="content">
+            Surgical masks may be worn continuously until visibly soiled or moist from respirations.
+            They should be carefully folded so that the outer surface is held inward and against itself to reduce contact with the outer surface during storage. The folded mask can be stored between uses in a clean, sealable paper bag or breathable container.<br />
+            </div>
+        </div>
+    </div>
+    )
+}
+
+function NitrileGloves() {
+    return (
+    <div className="card">
+        <div className="card-content">
+            <div className="media">
+                <div className="media-content">
+                    <p className="title is-4 has-text-black">Don't Reuse</p>
+                    <p className="subtitle is-6 has-text-black">Reuze Team</p>
+                </div>
+            </div>
+            <div className="content">
+            Surgical masks may be worn continuously until visibly soiled or moist from respirations.
+            They should be carefully folded so that the outer surface is held inward and against itself to reduce contact with the outer surface during storage. The folded mask can be stored between uses in a clean, sealable paper bag or breathable container.<br />
+            </div>
+        </div>
+    </div>
+    )
+}
+
+function Gowns() {
     return (
     <div className="card">
         <div className="card-content">

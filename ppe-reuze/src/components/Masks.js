@@ -8,12 +8,19 @@ export default function Masks() {
             <div className="columns">
                 <div className="column">
                     <Link to="/submissions/n95">
-                    <div className="box">N95 Respirator</div>
+                    <div className="box">
+                        <img src="N95.png" width="50" />
+                        <br />
+                        N95 Respirator
+                        </div>
                     </Link>
                 </div>
                 <div className="column">
                     <Link to="/submissions/surgical">
-                    <div className="box">Surgical Mask</div>
+                    <div className="box">
+                        <img src="SurgicalMask.png" width="100" />
+                        <br />
+                        Surgical Mask</div>
                     </Link>
                 </div>
             </div>
