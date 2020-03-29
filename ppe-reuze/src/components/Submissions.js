@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Amplify, { API, graphqlOperation } from 'aws-amplify';
 import config from '../aws-exports';
 Amplify.configure(config)
@@ -27,6 +28,17 @@ const addSubmission = `mutation createTodo($username:String! $description: Strin
 
 class Submissions extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            submissions: []
+        }
+    }
+
+    componentDidMount() {
+        this.listQuery()
+    }
+
     submissionMutation = async () => {
         const submissionDetails = {
             username: 'vishnu',
@@ -40,19 +52,21 @@ class Submissions extends React.Component {
     listQuery = async () => {
         console.log('listing submission');
         const allSubmissions = await API.graphql(graphqlOperation(listSubmissions));
-        alert(JSON.stringify(allSubmissions));
+        this.setState({ submissions: allSubmissions.data.listSubmissions.items })
     };
 
-    title(type){
-        switch(type){
+    title(type) {
+        switch (type) {
             case "n95":
-                return "Masks - N95 Respirator";
+                return "N95 Respirators";
             case "surgical":
-                return "Masks - Surgical";
+                return "Surgical Masks";
             case "latex":
-                return "Gloves - Latex";
+                return "Latex Gloves";
             case "nitrile":
-                return "Gloves - Nitrile";
+                return "Nitrile Gloves";
+            case "gowns":
+                return "Gowns";
             default:
                 return ""
         }
@@ -66,27 +80,43 @@ class Submissions extends React.Component {
                 <div className="columns">
                     <div className="column is-one-quarter"></div>
                     <div className="column">
-                    <div className="title">{this.title(this.props.match.params.type)}</div>
-                        <div className="card">
-                            <div className="card-content">
-                                <div className="media">
-                                    <div className="media-content">
-                                        <p className="title is-4 has-text-black">John Smith</p>
-                                        <p className="subtitle is-6 has-text-black">@johnsmith</p>
+                        
+                        <div className="title">
+                        <Link to="/">
+                            <button className="button is-rounded is-info">
+                                <i class="fas fa-arrow-left"></i>&nbsp;<span>Back</span>
+                            </button>
+                        </Link>
+                            </div>
+                        <div className="container has-text-right">
+                        <h1 className="title">Sanitation Strategies for {this.title(this.props.match.params.type)}</h1>
+                        <button className="button is-rounded">Submit a strategy</button>
+                        </div>
+                        <br /><br />
+
+                        {
+                        this.state.submissions === [] ? <p className="title">Loading...</p> :
+                        this.state.submissions.map((item) => {
+                            return (
+                                <div className="card">
+                                    <div className="card-content">
+                                        <div className="media">
+                                            <div className="media-content">
+                                                <p className="title is-4 has-text-black">title</p>
+                                                <p className="subtitle is-6 has-text-black">{item.username}</p>
+                                            </div>
+                                        </div>
+                                        <div className="content">
+                                            {item.description}
+                                            <br />
+                                            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
+                                        </div>
                                     </div>
                                 </div>
+                            )
+                        })}
 
-                                <div className="content">
-                                    <button onClick={this.listQuery}>GraphQL Query</button>
-                                    <button onClick={this.submissionMutation}>GraphQL Mutation</button>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                <a href="#">#css</a> <a href="#">#responsive</a>
-                                    <br />
-                                    <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
                     <div className="column is-one-quarter"></div>
                 </div>
