@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import SelectPPE from './SelectPPE';
-
 export default function Home() {
     return (
         <div className="container">

@@ -44,12 +44,8 @@
             "Arn"
         ]
     },
-    "useDefault": "defaultSocial",
+    "useDefault": "default",
     "hostedUI": true,
-    "hostedUIDomainName": "ppe-reuze",
-    "authProvidersUserPool": [],
-    "hostedUIProviderMeta": "[]",
-    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"https://reuze.covid.tools/signedin/\"],\"LogoutURLs\":[\"https://reuze.covid.tools/signedout/\"]}",
     "userPoolGroupList": [],
     "dependsOn": []
 }

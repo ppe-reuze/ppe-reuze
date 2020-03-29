@@ -4,8 +4,7 @@ import './App.sass'
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
 import Amplify from 'aws-amplify';
@@ -20,6 +19,7 @@ import Masks from './components/Masks';
 import Gloves from './components/Gloves';
 import Gowns from './components/Gowns';
 import Submissions from './components/Submissions';
+import AddSubmission from './components/AddSubmission';
 import SelectPPE from './components/SelectPPE';
 
 Amplify.configure(awsconfig);
@@ -54,6 +54,4 @@ function App() {
   );
 }
 
-export default withAuthenticator(App, {
-  includeGreetings: true
-});
+export default App;

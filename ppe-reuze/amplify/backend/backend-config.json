@@ -14,9 +14,10 @@
 				"authConfig": {
 					"additionalAuthenticationProviders": [],
 					"defaultAuthentication": {
-						"authenticationType": "AMAZON_COGNITO_USER_POOLS",
-						"userPoolConfig": {
-							"userPoolId": "authreuzeb7519069"
+						"authenticationType": "API_KEY",
+						"apiKeyConfig": {
+							"description": "reuzeapikey",
+							"apiKeyExpirationDays": 7
 						}
 					}
 				}
