@@ -1,0 +1,22 @@
+{
+    "reuze": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-reuze-reuze-131220-authRole",
+            "UnauthRoleArn": "arn:aws:iam::015589467135:role/amplify-reuze-reuze-131220-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::015589467135:role/amplify-reuze-reuze-131220-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-reuze-reuze-131220-deployment",
+            "UnauthRoleName": "amplify-reuze-reuze-131220-unauthRole",
+            "StackName": "amplify-reuze-reuze-131220",
+            "StackId": "arn:aws:cloudformation:us-east-1:015589467135:stack/amplify-reuze-reuze-131220/734cafc0-71e0-11ea-b6da-127c6c2d7f71",
+            "AmplifyAppId": "d1i3xw1fodui8b"
+        },
+        "categories": {
+            "auth": {
+                "reuzeb7519069": {
+                    "hostedUIProviderCreds": "[]"
+                }
+            }
+        }
+    }
+}

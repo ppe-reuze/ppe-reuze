@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.sass';
+import './App.sass'
 
 import {
   BrowserRouter as Router,
@@ -8,8 +8,9 @@ import {
   Link
 } from "react-router-dom";
 
-import { AnimatedSwitch } from 'react-router-transition';
-
+import Amplify from 'aws-amplify';
+import awsconfig from './aws-exports';
+import { withAuthenticator } from 'aws-amplify-react';
 
 // components
 import Navbar from './components/Navbar';
@@ -18,7 +19,9 @@ import Home from './components/Home';
 import Masks from './components/Masks';
 import Gloves from './components/Gloves';
 import Gowns from './components/Gowns';
-import Goggles from './components/Goggles';
+import Submissions from './components/Submissions';
+
+Amplify.configure(awsconfig);
 
 function App() {
   return (
@@ -35,7 +38,8 @@ function App() {
                 <Route exact path="/masks" component={Masks} />
                 <Route exact path="/gloves" component={Gloves} />
                 <Route exact path="/gowns" component={Gowns} />
-                <Route exact path="/goggles" component={Goggles} />
+                <Route exact path="/submissions" component={Submissions} />
+                <Route exact path="/submissions/:type" component={Submissions} />
               </Switch>
               </div>
               <div className="hero-foot">
@@ -48,4 +52,6 @@ function App() {
   );
 }
 
-export default App;
+export default withAuthenticator(App, {
+  includeGreetings: true
+});

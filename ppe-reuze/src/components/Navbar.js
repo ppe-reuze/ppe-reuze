@@ -19,14 +19,6 @@ export default function Navbar() {
                 </div>
                 <div id="navbarMenuHeroC" className="navbar-menu">
                     <div className="navbar-end">
-                        <span className="navbar-item">
-                            <a class="button is-success is-inverted" href="https://github.com/ppe-reuze">
-                                <span className="icon">
-                                    <i className="fab fa-github"></i>
-                                </span>
-                                <span>Source</span>
-                            </a>
-                        </span>
                     </div>
                 </div>
             </div>

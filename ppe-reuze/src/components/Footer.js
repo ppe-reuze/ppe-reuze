@@ -4,7 +4,7 @@ function Footer() {
     return (
     <section className="section">
        <div className="has-text-centered">
-           This information should not be taken as official guidance.
+           Reuze is a platform for community-sourced solutions to reusing and sanitizing PPE.
        </div>
     </section>
     )

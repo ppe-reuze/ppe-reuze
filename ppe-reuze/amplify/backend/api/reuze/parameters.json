@@ -1,0 +1,11 @@
+{
+    "AppSyncApiName": "reuze",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": "false",
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authreuzeb7519069",
+            "Outputs.UserPoolId"
+        ]
+    }
+}

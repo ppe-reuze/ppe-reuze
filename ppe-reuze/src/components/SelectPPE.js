@@ -19,19 +19,6 @@ export default function SelectPPE() {
 
                     <br />
 
-                    <Link to="/goggles">
-                    <button className="button is-rounded is-fullwidth is-large">
-                        <span class="icon is-small">
-                            <i class="fas fa-glasses"></i>
-                        </span>
-                        <span>
-                            Goggles
-                        </span>
-                    </button>
-                    </Link>
-
-                    <br />
-
                     <Link to="/gloves">
                     <button className="button is-rounded is-fullwidth is-large">
                         <span class="icon is-small">

@@ -15,10 +15,14 @@ function TypeOfGloves() {
             <h1 className="title">What kind of gloves do you have?</h1>
             <div className="columns">
                 <div className="column">
-                    <div className="box">Nitrile</div>
+                    <Link to="/submissions/nitrile">
+                        <div className="box">Nitrile</div>
+                    </Link>
                 </div>
                 <div className="column">
-                    <div className="box">Latex</div>
+                    <Link to="/submissions/latex">
+                        <div className="box">Latex</div>
+                    </Link>
                 </div>
             </div>
             <Link to="/">

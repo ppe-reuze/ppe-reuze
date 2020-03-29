@@ -1,0 +1,8 @@
+type Submission @model {
+  id: ID!
+  username: String!
+  title: String
+  description: String
+  equipment: String
+  votes: Int
+}
