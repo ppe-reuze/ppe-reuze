@@ -20,6 +20,7 @@ import Masks from './components/Masks';
 import Gloves from './components/Gloves';
 import Gowns from './components/Gowns';
 import Submissions from './components/Submissions';
+import SelectPPE from './components/SelectPPE';
 
 Amplify.configure(awsconfig);
 
@@ -35,6 +36,7 @@ function App() {
               <div className="hero-body">
               <Switch>
                 <Route exact path="/" component={Home} />
+                <Route exact path="/start" component={SelectPPE} />
                 <Route exact path="/masks" component={Masks} />
                 <Route exact path="/gloves" component={Gloves} />
                 <Route exact path="/gowns" component={Gowns} />

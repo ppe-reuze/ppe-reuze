@@ -30,7 +30,7 @@ export default function SelectPPE() {
 
                     <br />
 
-                    <Link to="/gowns">
+                    <Link to="/submissions/gowns">
                     <button className="button is-rounded is-fullwidth is-large">
                         <span class="icon is-small">
                             <i class="fas fa-user-nurse"></i>
