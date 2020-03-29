@@ -1,48 +1,58 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function SelectPPE() {
     return (
         <div className="container has-text-centered">
-            <h1 className="title">What would you like to sanitize?</h1>
+            <h1 className="title">What would you like to reuse?</h1>
             <div className="container">
+                    <Link to="/masks">
+                        <button className="button is-rounded is-fullwidth is-large">
+                            <span class="icon is-small">
+                                <i class="fas fa-head-side-mask"></i>
+                            </span>
+                            <span>
+                                Masks
+                            </span>
+                        </button>
+                    </Link>
 
-                <div className="buttons are-large">
-                    <button className="button is-warning is-fullwidth is-rounded">
-                        <span class="icon is-small">
-                            <i class="fas fa-head-side-mask"></i>
-                        </span>
-                        <span>
-                            Masks
-                </span>
-                    </button>
+                    <br />
 
-                    <button className="button is-primary is-fullwidth is-rounded">
+                    <Link to="/goggles">
+                    <button className="button is-rounded is-fullwidth is-large">
                         <span class="icon is-small">
                             <i class="fas fa-glasses"></i>
                         </span>
                         <span>
                             Goggles
-                </span>
+                        </span>
                     </button>
+                    </Link>
 
-                    <button className="button is-success is-fullwidth is-rounded">
+                    <br />
+
+                    <Link to="/gloves">
+                    <button className="button is-rounded is-fullwidth is-large">
                         <span class="icon is-small">
                             <i class="fas fa-hands-wash"></i>
                         </span>
                         <span>Gloves</span>
                     </button>
+                    </Link>
 
-                    <button className="button is-danger is-fullwidth is-rounded">
+                    <br />
+
+                    <Link to="/gowns">
+                    <button className="button is-rounded is-fullwidth is-large">
                         <span class="icon is-small">
                             <i class="fas fa-user-nurse"></i>
                         </span>
                         <span>
-                            Gowns &amp; Shoe Covers
+                            Gowns
                         </span>
                     </button>
-
-                </div>
-
+                    </Link>
             </div>
         </div>
     )

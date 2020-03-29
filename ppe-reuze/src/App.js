@@ -8,9 +8,17 @@ import {
   Link
 } from "react-router-dom";
 
+import { AnimatedSwitch } from 'react-router-transition';
+
+
+// components
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import SelectPPE from './components/SelectPPE';
+import Home from './components/Home';
+import Masks from './components/Masks';
+import Gloves from './components/Gloves';
+import Gowns from './components/Gowns';
+import Goggles from './components/Goggles';
 
 function App() {
   return (
@@ -23,9 +31,11 @@ function App() {
               </div>
               <div className="hero-body">
               <Switch>
-                <Route path="/">
-                  <SelectPPE />
-                </Route>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/masks" component={Masks} />
+                <Route exact path="/gloves" component={Gloves} />
+                <Route exact path="/gowns" component={Gowns} />
+                <Route exact path="/goggles" component={Goggles} />
               </Switch>
               </div>
               <div className="hero-foot">
