@@ -4,16 +4,6 @@ import Amplify, { API, graphqlOperation } from 'aws-amplify';
 import config from '../aws-exports';
 Amplify.configure(config)
 
-const listSubmissions = `query listSubmissions {
-    listSubmissions{
-      items{
-        id
-        username
-        description
-      }
-    }
-  }`;
-
 class Submissions extends React.Component {
 
     constructor(props) {
@@ -27,8 +17,22 @@ class Submissions extends React.Component {
         this.listQuery()
     }
 
+    listSubmissions = `query listSubmissions {
+        listSubmissions(filter: {
+            equipment: {
+              contains: "${this.props.match.params.type}"
+            }
+          }){
+          items{
+            id
+            username
+            description
+          }
+        }
+      }`;
+
     listQuery = async () => {
-        const allSubmissions = await API.graphql(graphqlOperation(listSubmissions));
+        const allSubmissions = await API.graphql(graphqlOperation(this.listSubmissions));
         this.setState({ submissions: allSubmissions.data.listSubmissions.items })
     };
 
