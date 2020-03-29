@@ -1,20 +1,29 @@
 import React from 'react';
 import './App.sass';
 
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import SelectPPE from './components/SelectPPE';
+
 function App() {
   return (
-    <section class="hero">
-      <div class="hero-body">
-        <div class="container">
-          <h1 class="title">
-            Reuze
-          </h1>
-          <h2 class="subtitle">
-            Sanitize and reuse your personal protective equipment
-          </h2>
+    <div className="App">
+      <section className="hero is-info is-fullheight">
+
+        <div className="hero-head">
+          <Navbar />
         </div>
-      </div>
-    </section>
+
+        <div className="hero-body">
+          <SelectPPE />
+        </div>
+
+        <div className="hero-foot">
+          <Footer />
+        </div>
+
+      </section>
+    </div>
   );
 }
 
