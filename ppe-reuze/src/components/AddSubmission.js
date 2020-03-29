@@ -17,14 +17,28 @@ const addSubmission = `mutation createTodo($username:String! $description: Strin
 
 class AddSubmission extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            title: "",
+            description: ""
+        }
+    }
+
     submissionMutation = async () => {
         const submissionDetails = {
             username: 'vishnu',
-            description: 'Amplify CLI rocks!'
+            title: this.state.title,
+            description: this.state.description
         };
 
         const newSubmission = await API.graphql(graphqlOperation(addSubmission, submissionDetails));
         alert(JSON.stringify(newSubmission));
+    };
+
+    submitForm = async (e) => {
+        e.preventDefault();
+        this.submissionMutation();
     };
 
 
@@ -48,7 +62,7 @@ class AddSubmission extends Component {
 
                 <div class="field is-grouped">
                     <div class="control">
-                        <button class="button is-link" onclick={this.submissionMutation}>Submit</button>
+                        <button class="button is-link" onClick={this.submitForm}>Submit</button>
                     </div>
                     <div class="control">
                         <button class="button is-link is-light">Cancel</button>
