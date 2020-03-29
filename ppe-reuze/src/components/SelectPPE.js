@@ -7,39 +7,40 @@ export default function SelectPPE() {
             <div className="container">
 
                 <div className="buttons are-large">
-                    <button className="button is-outlined is-fullwidth">
+                    <button className="button is-warning is-fullwidth is-rounded">
                         <span class="icon is-small">
-                            <i class="fas fa-head-side-mask fa-lg"></i>
+                            <i class="fas fa-head-side-mask"></i>
                         </span>
                         <span>
                             Masks
                 </span>
                     </button>
 
-                    <button className="button is-outlined is-fullwidth">
+                    <button className="button is-primary is-fullwidth is-rounded">
                         <span class="icon is-small">
-                            <i class="fas fa-glasses fa-lg"></i>
+                            <i class="fas fa-glasses"></i>
                         </span>
                         <span>
                             Goggles
                 </span>
                     </button>
 
-                    <button className="button is-outlined is-fullwidth">
+                    <button className="button is-success is-fullwidth is-rounded">
                         <span class="icon is-small">
-                            <i class="fas fa-hands-wash fa-lg"></i>
+                            <i class="fas fa-hands-wash"></i>
                         </span>
                         <span>Gloves</span>
                     </button>
 
-                    <button className="button is-outlined is-fullwidth">
+                    <button className="button is-danger is-fullwidth is-rounded">
                         <span class="icon is-small">
-                            <i class="fas fa-user-nurse fa-lg"></i>
+                            <i class="fas fa-user-nurse"></i>
                         </span>
                         <span>
-                            Gowns
-                </span>
+                            Gowns &amp; Shoe Covers
+                        </span>
                     </button>
+
                 </div>
 
             </div>
