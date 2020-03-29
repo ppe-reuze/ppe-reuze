@@ -50,7 +50,6 @@ class Submissions extends React.Component {
     };
 
     listQuery = async () => {
-        console.log('listing submission');
         const allSubmissions = await API.graphql(graphqlOperation(listSubmissions));
         this.setState({ submissions: allSubmissions.data.listSubmissions.items })
     };
@@ -90,7 +89,9 @@ class Submissions extends React.Component {
                             </div>
                         <div className="container has-text-right">
                         <h1 className="title">Sanitation Strategies for {this.title(this.props.match.params.type)}</h1>
-                        <button className="button is-rounded">Submit a strategy</button>
+                        <Link to="/addsubmission">
+                            <button className="button is-rounded">Submit a strategy</button>
+                        </Link>
                         </div>
                         <br /><br />
 
@@ -109,7 +110,6 @@ class Submissions extends React.Component {
                                         <div className="content">
                                             {item.description}
                                             <br />
-                                            <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
                                         </div>
                                     </div>
                                 </div>

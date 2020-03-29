@@ -42,6 +42,7 @@ function App() {
                 <Route exact path="/gowns" component={Gowns} />
                 <Route exact path="/submissions" component={Submissions} />
                 <Route exact path="/submissions/:type" component={Submissions} />
+                <Route exact path="/addsubmission" component={AddSubmission} />
               </Switch>
               </div>
               <div className="hero-foot">
