@@ -14,18 +14,6 @@ const listSubmissions = `query listTodos {
     }
   }`;
 
-const addSubmission = `mutation createTodo($username:String! $description: String!) {
-    createSubmission(input:{
-      username:$username
-      description:$description
-    }){
-      id
-      username
-      description
-    }
-  }`;
-
-
 class Submissions extends React.Component {
 
     constructor(props) {
@@ -39,16 +27,6 @@ class Submissions extends React.Component {
         this.listQuery()
     }
 
-    submissionMutation = async () => {
-        const submissionDetails = {
-            username: 'vishnu',
-            description: 'Amplify CLI rocks!'
-        };
-
-        const newSubmission = await API.graphql(graphqlOperation(addSubmission, submissionDetails));
-        alert(JSON.stringify(newSubmission));
-    };
-
     listQuery = async () => {
         const allSubmissions = await API.graphql(graphqlOperation(listSubmissions));
         this.setState({ submissions: allSubmissions.data.listSubmissions.items })
@@ -60,6 +38,23 @@ class Submissions extends React.Component {
                 return "N95 Respirators";
             case "surgical":
                 return "Surgical Masks";
+            case "latex":
+                return "Latex Gloves";
+            case "nitrile":
+                return "Nitrile Gloves";
+            case "gowns":
+                return "Gowns";
+            default:
+                return ""
+        }
+    }
+
+    recommendation(type) {
+        switch (type) {
+            case "n95":
+                return <N95 />
+            case "surgical":
+                return <SurgicalMask />
             case "latex":
                 return "Latex Gloves";
             case "nitrile":
@@ -94,7 +89,7 @@ class Submissions extends React.Component {
 
                         <div>
                         <h1 className="title">Reuze Recommendation</h1>
-                        <N95 />
+                        {this.recommendation(this.props.match.params.type)}
                         </div>
                         <br /><br />
 
@@ -152,6 +147,25 @@ function N95() {
             <div className="content">
             Suspend the masks in hot air (e.g. oven) at 70C for 30 minutes without contacting or putting the masks too close to a metal surface. 
                 <br />
+            </div>
+        </div>
+    </div>
+    )
+}
+
+function SurgicalMask() {
+    return (
+    <div className="card">
+        <div className="card-content">
+            <div className="media">
+                <div className="media-content">
+                    <p className="title is-4 has-text-black">Don't Reuse</p>
+                    <p className="subtitle is-6 has-text-black">Reuze Team</p>
+                </div>
+            </div>
+            <div className="content">
+            Surgical masks may be worn continuously until visibly soiled or moist from respirations.
+            They should be carefully folded so that the outer surface is held inward and against itself to reduce contact with the outer surface during storage. The folded mask can be stored between uses in a clean, sealable paper bag or breathable container.<br />
             </div>
         </div>
     </div>
