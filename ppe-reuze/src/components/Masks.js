@@ -24,7 +24,7 @@ export default function Masks() {
                     </Link>
                 </div>
             </div>
-            <Link to="/">
+            <Link to="/start">
                 <button className="button is-rounded is-info">
                     <i class="fas fa-arrow-left"></i>&nbsp;<span>Back</span>
                 </button>

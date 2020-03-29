@@ -19,6 +19,9 @@ export default function Navbar() {
                 </div>
                 <div id="navbarMenuHeroC" className="navbar-menu">
                     <div className="navbar-end">
+                        <a class="button is-primary is-inverted">
+                            <span>Log In</span>
+                        </a>
                     </div>
                 </div>
             </div>

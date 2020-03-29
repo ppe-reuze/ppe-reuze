@@ -36,6 +36,8 @@ class Submissions extends React.Component {
         this.setState({ submissions: allSubmissions.data.listSubmissions.items })
     };
 
+
+
     title(type) {
         switch (type) {
             case "n95":
@@ -80,7 +82,7 @@ class Submissions extends React.Component {
                     <div className="column">
 
                         <div className="title">
-                            <Link to="/">
+                            <Link to="/start">
                                 <button className="button is-rounded is-info">
                                     <i class="fas fa-arrow-left"></i>&nbsp;<span>Back</span>
                                 </button>
@@ -103,7 +105,7 @@ class Submissions extends React.Component {
                                 <button className="button is-rounded">Submit your strategy</button>
                             </Link></h1>
                         {
-                            this.state.submissions === [] ? <p className="title">Loading...</p> :
+                            this.state.submissions.length == 0 ? <p>No submissions yet.</p>:
                                 this.state.submissions.map((item) => {
                                     return (
                                         <div className="card">
