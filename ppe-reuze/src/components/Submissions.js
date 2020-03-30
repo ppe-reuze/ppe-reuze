@@ -206,13 +206,14 @@ function LatexGloves() {
         <div className="card-content">
             <div className="media">
                 <div className="media-content">
-                    <p className="title is-4 has-text-black">Don't Reuse</p>
+                    <p className="title is-4 has-text-black">Hibiscrub (Chlorhexidine)</p>
                     <p className="subtitle is-6 has-text-black">Reuze Team</p>
                 </div>
             </div>
             <div className="content">
-            Surgical masks may be worn continuously until visibly soiled or moist from respirations.
-            They should be carefully folded so that the outer surface is held inward and against itself to reduce contact with the outer surface during storage. The folded mask can be stored between uses in a clean, sealable paper bag or breathable container.<br />
+            <p><strong>Equipment Needed:</strong> Hibiscrub (Chlorhexidine)</p>
+            Wet gloved hands, add a small amount of hibiscrub, wash hands together for 1 minute.
+            Applies to Ansell Medical 'Medi-Grip', Regent 'Biogel D'.<br />
             </div>
         </div>
     </div>
@@ -225,13 +226,13 @@ function NitrileGloves() {
         <div className="card-content">
             <div className="media">
                 <div className="media-content">
-                    <p className="title is-4 has-text-black">Don't Reuse</p>
+                    <p className="title is-4 has-text-black">Alcohol Based Hand Rub</p>
                     <p className="subtitle is-6 has-text-black">Reuze Team</p>
                 </div>
             </div>
             <div className="content">
-            Surgical masks may be worn continuously until visibly soiled or moist from respirations.
-            They should be carefully folded so that the outer surface is held inward and against itself to reduce contact with the outer surface during storage. The folded mask can be stored between uses in a clean, sealable paper bag or breathable container.<br />
+            <p><strong>Equipment Needed:</strong> Alcohol-Based Hand Sanitizer</p>
+            <strong>Steps:</strong> Take a small amount, apply to gloved hands, rub hands together until dry (typically 20-30 seconds)<br />
             </div>
         </div>
     </div>
@@ -249,8 +250,7 @@ function Gowns() {
                 </div>
             </div>
             <div className="content">
-            Surgical masks may be worn continuously until visibly soiled or moist from respirations.
-            They should be carefully folded so that the outer surface is held inward and against itself to reduce contact with the outer surface during storage. The folded mask can be stored between uses in a clean, sealable paper bag or breathable container.<br />
+            Paper and plastic gowns can be reused as long as they are not visibly soiled. Alternatives to paper or plastic gowns include patient gowns, disposable lab coats, and disposable coveralls. Cloth gowns may be used as well.
             </div>
         </div>
     </div>
