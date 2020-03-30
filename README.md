@@ -1,15 +1,7 @@
-# Hack Covid-19 Hackathon - Team PPE-Reuze
+# Reuze - Pandemic Response Hackathon
 
-### What problem(s) are we trying to solve?
+During the COVID-19 epidemic, there has been a severe shortage of personal protective equipment, including N95 respirators, surgical masks, gloves and gowns. This equipment is normally either disposable or designed for short term use to minimize cross-contamination but healthcare providers have been forced to use them for long periods of time out of necessity. Given this situation, many providers have been seeking out solutions for sanitizing and reusing their equipment in a more safe manner, but information on how to do this is scattered, hard to find, and not vetted for quality.
 
-The manufacturing and distribution chains for respirators, masks, goggles, gloves, and face shields (non-exhaustive list, collectively known as PPE) are designed for normal healthcare and industrial operations. Moreover, to minimize inventory and warehousing costs, many suppliers, wholesalers, retailers, and consumers of these products have switched to a just-in-time model of equipment procurement rather than stocking up for times of need.
+Reuze is a platform that allows healthcare providers to easily share strategies for sanitizing and reusing their personal protective equipment. Strategies are organized by type and model of PPE. Users are guided through a questionnaire to determine the strategies relevant to their equipment. Users who submit strategies are vetted to ensure they are qualified healthcare professionals. Users can vote on strategies submitted by other users. Strategies that appear to be effective and are evidence based are listed as Reuze Recommendations.
 
-The above factors have led to the system’s inability to respond to an unpredictable and severe threat, such as the current COVID pandemic, that requires rapid scaling of PPE production. Even if human and capital infrastructure remain intact, without intact supply chains for crucial goods such as PPE, that infrastructure cannot function efficiently (or at all). Undeniable evidence shows that both our national and global PPE supply chains have been overwhelmed by the current catastrophe, and providers and the public do not have enough PPE on hand to protect themselves against this disease.
-
-There are two main approaches to solving this problem - (1) rapidly make and distribute more PPE to areas of need, or (2) reuse existing goods as efficiently as possible. We propose one solution as part of the second approach - PPE Reuze.
-
-To effectively reuse PPE, a user needs three components: (1) a used piece of material, (2) material for cleaning and sterilization, and (3) knowledge of how to process the used piece of material for the next cycle of use. We assume that the user has some form of access to the first two components, and PPE Reuze is a solution that delivers the third - authoritative, evidence-based, and updated knowledge for reusing these scarce resources.
-
-### What does success look like?
-
-User is able to gain authoritative, evidence-based, and updated knowledge to clean and sterilize their PPE in a guided and user-friendly way. 
+Reuze was developed in React with AWS Amplify.
