@@ -9,7 +9,6 @@ import {
 
 import Amplify from 'aws-amplify';
 import awsconfig from './aws-exports';
-import { withAuthenticator } from 'aws-amplify-react';
 
 // components
 import Navbar from './components/Navbar';

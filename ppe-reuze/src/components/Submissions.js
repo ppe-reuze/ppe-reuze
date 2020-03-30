@@ -98,7 +98,7 @@ class Submissions extends React.Component {
 
                         <div className="title">
                             <Link to="/start">
-                                <button className="button is-rounded is-info">
+                                <button className="button is-rounded">
                                     <i class="fas fa-arrow-left"></i>&nbsp;<span>Back</span>
                                 </button>
                             </Link>
@@ -116,13 +116,19 @@ class Submissions extends React.Component {
 
                         <div>
                         <h1 className="title">User Submitted &nbsp; &nbsp;
-                        <Link to="/addsubmission">
+                        <Link to={{
+                            pathname: '/addsubmission',
+                            state: {
+                                type: this.props.match.params.type
+                            }
+                        }}>
                                 <button className="button is-rounded">Submit your strategy</button>
                             </Link></h1>
                         {
                             this.state.submissions.length == 0 ? <p>No submissions yet.</p>:
                                 this.state.submissions.map((item) => {
                                     return (
+                                        <React.Fragment>
                                         <div className="card">
                                             <div className="card-content">
                                                 <div className="media">
@@ -144,6 +150,8 @@ class Submissions extends React.Component {
                                                 <a href="#" class="card-footer-item" onClick={this.downvote}><i class="fas fa-thumbs-down"></i></a>
                                             </footer>
                                         </div>
+                                        <br />
+                                        </React.Fragment>
                                     )
                                 })}
 
