@@ -45,18 +45,32 @@ class AddSubmission extends Component {
     render() {
         return (
             <div className="container">
-                <h1 className="title">Add a new strategy</h1>
+                <h1 className="title">Submit a new strategy</h1>
                 <div className="field">
-                    <label className="label has-text-white">Title</label>
+                    <label className="label has-text-white">Descriptive title</label>
                     <div className="control">
                         <input className="input" type="text" placeholder="Title" />
                     </div>
                 </div>
 
                 <div className="field">
-                    <label className="label has-text-white">Details</label>
+                    <label className="label has-text-white">Equipment needed</label>
+                    <div className="control">
+                        <input className="input" type="text" placeholder="Title" />
+                    </div>
+                </div>
+
+                <div className="field">
+                    <label className="label has-text-white">Steps to perform</label>
                     <div className="control">
                         <input className="textarea" type="text" placeholder="Details" />
+                    </div>
+                </div>
+
+                <div className="field">
+                    <label className="label has-text-white">Source / Link to Evidence</label>
+                    <div className="control">
+                        <input className="input" type="text" placeholder="Title" />
                     </div>
                 </div>
 

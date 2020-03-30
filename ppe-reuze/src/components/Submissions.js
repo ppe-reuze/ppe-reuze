@@ -9,7 +9,8 @@ class Submissions extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            submissions: []
+            submissions: [],
+            votes: 0
         }
     }
 
@@ -27,12 +28,16 @@ class Submissions extends React.Component {
             id
             username
             description
+            title
+            votes
+            equipment
           }
         }
       }`;
 
     listQuery = async () => {
         const allSubmissions = await API.graphql(graphqlOperation(this.listSubmissions));
+        console.log(JSON.stringify(allSubmissions));
         this.setState({ submissions: allSubmissions.data.listSubmissions.items })
     };
 
@@ -71,6 +76,16 @@ class Submissions extends React.Component {
                 return ""
         }
     }
+
+    upvote = async (e) => {
+        e.preventDefault();
+        this.setState({ votes: this.state.votes + 1 })
+    };
+
+    downvote = async (e) => {
+        e.preventDefault();
+        this.setState({ votes: this.state.votes - 1 })
+    };
 
     render() {
 
@@ -112,19 +127,21 @@ class Submissions extends React.Component {
                                             <div className="card-content">
                                                 <div className="media">
                                                     <div className="media-content">
-                                                        <p className="title is-4 has-text-black">title</p>
+                                                        <p className="title is-4 has-text-black">{item.title}</p>
                                                         <p className="subtitle is-6 has-text-black">{item.username}</p>
                                                     </div>
                                                 </div>
                                                 <div className="content">
-                                                    {item.description}
+                                                <p><strong>Equipment Needed:</strong> {item.equipment}</p>
+                                                    <p><strong>Steps:</strong> {item.description}</p>
                                                     <br />
+                                                    <p><strong>Source</strong>: Self</p>
                                                 </div>
                                             </div>
                                             <footer class="card-footer">
-                                                <a href="#" class="card-footer-item">👍</a>
-                                                <a href="#" class="card-footer-item">{item.votes} votes</a>
-                                                <a href="#" class="card-footer-item">👎</a>
+                                                <a href="#" class="card-footer-item" onClick={this.upvote}><i class="fas fa-thumbs-up"></i></a>
+                                                <a href="#" class="card-footer-item">{this.state.votes}</a>
+                                                <a href="#" class="card-footer-item" onClick={this.downvote}><i class="fas fa-thumbs-down"></i></a>
                                             </footer>
                                         </div>
                                     )
@@ -154,8 +171,10 @@ function N95() {
                 </div>
             </div>
             <div className="content">
+                <p><strong>Equipment Needed:</strong> Oven</p>
             Suspend the masks in hot air (e.g. oven) at 70C for 30 minutes without contacting or putting the masks too close to a metal surface. 
-                <br />
+                <br /><br />
+            <p><strong>Source</strong>: <a href="https://utrf.tennessee.edu/information-faqs-performance-protection-sterilization-of-masks-against-covid-19">https://utrf.tennessee.edu/information-faqs-performance-protection-sterilization-of-masks-against-covid-19</a></p>
             </div>
         </div>
     </div>
