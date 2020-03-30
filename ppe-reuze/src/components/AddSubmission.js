@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Amplify, { API, graphqlOperation } from 'aws-amplify';
 import { Link, withRouter } from 'react-router-dom';
+import { withAuthenticator } from 'aws-amplify-react';
 import config from '../aws-exports';
 Amplify.configure(config)
 
@@ -36,7 +37,7 @@ class AddSubmission extends Component {
         const { type } = this.props.location.state;
         this.setState({type: type});
     }
-
+    
     submissionMutation = async () => {
         const submissionDetails = {
             username: 'demo',
@@ -141,4 +142,4 @@ class AddSubmission extends Component {
     }
 }
 
-export default AddSubmission;
+export default withAuthenticator(AddSubmission, {includeGreetings: false});
