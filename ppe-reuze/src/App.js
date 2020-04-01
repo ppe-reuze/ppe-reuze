@@ -25,7 +25,6 @@ import Login from './components/Login';
 // context
 import UserContext, { UserProvider } from './components/UserContext';
 
-
 Amplify.configure(awsconfig);
 
 class App extends React.Component {

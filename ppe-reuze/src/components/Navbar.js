@@ -11,14 +11,14 @@ class Navbar extends React.Component {
         event.preventDefault();
         const { setUser, setLoginStatus } = this.context;
         try {
-          await Auth.signOut();
-          setLoginStatus(false);
-          setUser(null);
-          this.props.history.push("/");
-        }catch(error) {
-          console.log(error.message);
+            await Auth.signOut();
+            setLoginStatus(false);
+            setUser(null);
+            this.props.history.push("/");
+        } catch (error) {
+            console.log(error.message);
         }
-      }
+    }
 
     render() {
         return (
@@ -43,16 +43,12 @@ class Navbar extends React.Component {
                                     <div className="navbar-item">
                                         {isLoggedIn && user ? (
                                             <Link to="/" onClick={this.logout}>
-                                                <button className="button is-rounded is-info">Log Out</button>
+                                                <button className="button is-rounded is-primary">Log Out</button>
                                             </Link>
                                         ) : (
-                                                <div>
-                                                    <Link to="/login">
-                                                        <button className="button is-rounded is-info">Log In</button>
-                                                    </Link>
-                                                    &nbsp;
-                                                    <button className="button is-rounded is-primary">Sign Up</button>
-                                                </div>
+                                                <Link to="/login">
+                                                    <button className="button is-rounded is-primary">Log In</button>
+                                                </Link>
                                             )}
                                     </div>
                                 </div>
