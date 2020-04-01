@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function Home() {
     return (
-        <section className="hero is-info">
+        <section className="hero is-info is-large">
             <div class="hero-body">
                 <div className="container">
                     <h1 className="title">Reusing &amp; sanitizing PPE</h1>

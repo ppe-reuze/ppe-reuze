@@ -87,28 +87,28 @@ class AddSubmission extends Component {
                 <h1 className="title">Submit a new strategy</h1>
                 <h1 className="subtitle">{this.title(this.state.type)}</h1>
                 <div className="field">
-                    <label className="label has-text-white">Descriptive title</label>
+                    <label className="label">Descriptive title</label>
                     <div className="control">
                         <input className="input has-text-black" type="text" value={this.state.title} onChange={this.updateTitle} />
                     </div>
                 </div>
 
                 <div className="field">
-                    <label className="label has-text-white">Equipment needed</label>
+                    <label className="label">Equipment needed</label>
                     <div className="control">
                         <input className="input has-text-black" type="text" />
                     </div>
                 </div>
 
                 <div className="field">
-                    <label className="label has-text-white">Steps to perform</label>
+                    <label className="label">Steps to perform</label>
                     <div className="control">
                         <input className="textarea has-text-black" type="text" value={this.state.description} onChange={this.updateDescription} />
                     </div>
                 </div>
 
                 <div className="field">
-                    <label className="label has-text-white">Source / Link to Evidence</label>
+                    <label className="label">Source / Link to Evidence</label>
                     <div className="control">
                         <input className="input has-text-black" type="text" />
                     </div>

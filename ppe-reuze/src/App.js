@@ -20,6 +20,7 @@ import Gowns from './components/Gowns';
 import Submissions from './components/Submissions';
 import AddSubmission from './components/AddSubmission';
 import SelectPPE from './components/SelectPPE';
+import Login from './components/Login';
 
 // context
 import UserContext, { UserProvider } from './components/UserContext';
@@ -28,6 +29,7 @@ import UserContext, { UserProvider } from './components/UserContext';
 Amplify.configure(awsconfig);
 
 class App extends React.Component {
+
   render() {
     return (
       <UserProvider>
@@ -36,6 +38,7 @@ class App extends React.Component {
             <Navbar />
             <Switch>
               <Route exact path="/" component={Home} />
+              <Route exact path="/login" component={Login} />
               <Route exact path="/start" component={SelectPPE} />
               <Route exact path="/masks" component={Masks} />
               <Route exact path="/gloves" component={Gloves} />

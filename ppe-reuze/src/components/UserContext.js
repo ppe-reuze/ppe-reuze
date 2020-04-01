@@ -1,11 +1,11 @@
 import React from 'react';
-import { Auth } from 'aws-amplify';
+import { Auth, Hub } from 'aws-amplify';
 
 const UserContext = React.createContext()
 
+
 export class UserProvider extends React.Component {
     state = {
-        isLoggingIn: true,
         isLoggedIn: false,
         user: null
     }
@@ -19,16 +19,20 @@ export class UserProvider extends React.Component {
 
     componentDidMount(){
         this.getCurrentUser();
+        Hub.listen('auth', this.authListener);
+    }
+
+    authListener = (data) => {
+      this.getCurrentUser();
     }
 
     getCurrentUser() {
         Auth.currentAuthenticatedUser().then(user => {
             this.setUser(user);
             this.setLoginStatus(true);
-            this.setState({ isLoggingIn: false });
         }).catch(err => {
+            this.setUser(null);
             this.setLoginStatus(false);
-            this.setState({ isLoggingIn: false });
         });
     }
 
@@ -50,9 +54,8 @@ export class UserProvider extends React.Component {
             value={{
               isLoggedIn: this.state.isLoggedIn,
               user: this.state.user,
-              setAuthStatus: this.setLoginStatus,
-              setUser: this.setUser,
-              isLoggingIn: this.state.isLoggingIn
+              setLoginStatus: this.setLoginStatus,
+              setUser: this.setUser
             }}
           >
             {this.props.children}

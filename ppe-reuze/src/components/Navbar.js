@@ -47,7 +47,9 @@ class Navbar extends React.Component {
                                             </Link>
                                         ) : (
                                                 <div>
-                                                    <button className="button is-rounded is-info">Log In</button>
+                                                    <Link to="/login">
+                                                        <button className="button is-rounded is-info">Log In</button>
+                                                    </Link>
                                                     &nbsp;
                                                     <button className="button is-rounded is-primary">Sign Up</button>
                                                 </div>
