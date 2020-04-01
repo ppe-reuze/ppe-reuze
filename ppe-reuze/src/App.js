@@ -21,37 +21,36 @@ import Submissions from './components/Submissions';
 import AddSubmission from './components/AddSubmission';
 import SelectPPE from './components/SelectPPE';
 
+// context
+import UserContext, { UserProvider } from './components/UserContext';
+
+
 Amplify.configure(awsconfig);
 
-function App() {
-  return (
-    <div className="App">
-      <Router>
-        <div>
-          <section className="hero is-info is-fullheight">
-              <div className="hero-head">
-                <Navbar />
-              </div>
-              <div className="hero-body">
-              <Switch>
-                <Route exact path="/" component={Home} />
-                <Route exact path="/start" component={SelectPPE} />
-                <Route exact path="/masks" component={Masks} />
-                <Route exact path="/gloves" component={Gloves} />
-                <Route exact path="/gowns" component={Gowns} />
-                <Route exact path="/submissions" component={Submissions} />
-                <Route exact path="/submissions/:type" component={Submissions} />
-                <Route exact path="/addsubmission" component={AddSubmission} />
-              </Switch>
-              </div>
-              <div className="hero-foot">
-                <Footer />
-              </div>
-          </section>
+class App extends React.Component {
+  render() {
+    return (
+      <UserProvider>
+        <div className="App">
+          <Router>
+            <Navbar />
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/start" component={SelectPPE} />
+              <Route exact path="/masks" component={Masks} />
+              <Route exact path="/gloves" component={Gloves} />
+              <Route exact path="/gowns" component={Gowns} />
+              <Route exact path="/submissions" component={Submissions} />
+              <Route exact path="/submissions/:type" component={Submissions} />
+              <Route exact path="/addsubmission" component={AddSubmission} />
+            </Switch>
+            <Footer />
+          </Router>
         </div>
-      </Router>
-    </div>
-  );
+      </UserProvider>
+    );
+  }
 }
 
+App.contextType = UserContext;
 export default App;
