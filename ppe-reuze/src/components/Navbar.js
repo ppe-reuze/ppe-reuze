@@ -27,10 +27,8 @@ class Navbar extends React.Component {
                     <header className="navbar">
                         <div className="container">
                             <div className="navbar-brand">
-                                <Link to="/">
-                                    <a className="navbar-item">
-                                        <i class="fas fa-head-side-mask fa-lg"></i>&nbsp;<span className="title">REUZE</span>
-                                    </a>
+                                <Link to="/" className="navbar-item">
+                                        <i className="fas fa-head-side-mask fa-lg"></i>&nbsp;<span className="title">REUZE</span>
                                 </Link>
                                 <span className="navbar-burger burger" data-target="navbarMenuHeroC">
                                     <span></span>
@@ -42,9 +40,12 @@ class Navbar extends React.Component {
                                 <div className="navbar-end">
                                     <div className="navbar-item">
                                         {isLoggedIn && user ? (
+                                            <div>
+                                            <button className="button is-rounded" style={{ marginRight: "0.5em" }}>{user.username}'s account</button>
                                             <Link to="/" onClick={this.logout}>
                                                 <button className="button is-rounded is-primary">Log Out</button>
                                             </Link>
+                                            </div>
                                         ) : (
                                                 <Link to="/login">
                                                     <button className="button is-rounded is-primary">Log In</button>

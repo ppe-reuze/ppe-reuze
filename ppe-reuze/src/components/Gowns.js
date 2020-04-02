@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function Gowns() {
     return (
-        <div className="container has-text-centered">
+        <div className="container has-text-centered app-content">
             <h1 className="title">Gowns</h1>
             <br />
             <div className="box has-text-left">

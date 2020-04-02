@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Authenticator, SignIn, SignUp, ForgotPassword } from 'aws-amplify-react';
+import { Authenticator } from 'aws-amplify-react';
 import { UserConsumer } from './UserContext';
 import { Redirect } from 'react-router-dom';
 
@@ -31,7 +31,7 @@ const signUpConfig = {
       },
       {
         label: 'NPI',
-        key: 'npi',
+        key: 'custom:npi',
         required: false,
         displayOrder: 4,
         type: 'string'

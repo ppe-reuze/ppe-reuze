@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import Amplify, { API, graphqlOperation } from 'aws-amplify';
-import { Link, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { withAuthenticator } from 'aws-amplify-react';
 import config from '../aws-exports';
+import UserContext from './UserContext';
 Amplify.configure(config)
 
 const addSubmission = `mutation createTodo($username:String! $title: String! $description: String! $equipment: String!) {
@@ -20,6 +21,7 @@ const addSubmission = `mutation createTodo($username:String! $title: String! $de
 
 
 class AddSubmission extends Component {
+    static contextType = UserContext;
 
     constructor(props) {
         super(props);
@@ -35,12 +37,14 @@ class AddSubmission extends Component {
 
     componentDidMount() {
         const { type } = this.props.location.state;
-        this.setState({type: type});
+        this.setState({ type: type });
     }
-    
+
     submissionMutation = async () => {
+        const { user } = this.context;
+
         const submissionDetails = {
-            username: 'demo',
+            username: user.username,
             title: this.state.title,
             description: this.state.description,
             equipment: this.state.type
@@ -50,11 +54,11 @@ class AddSubmission extends Component {
         console.log(newSubmission)
     };
 
-    updateTitle(event){
+    updateTitle(event) {
         this.setState({ title: event.target.value });
     }
 
-    updateDescription(event){
+    updateDescription(event) {
         this.setState({ description: event.target.value });
     }
 
@@ -116,13 +120,13 @@ class AddSubmission extends Component {
 
                 <div class="field is-grouped">
                     <div class="control">
-                    <Link to={{
+                        <Link to={{
                             pathname: '/submissions/' + this.state.type,
                             state: {
                                 type: this.props.match.params.type
                             }
                         }}>
-                        <button class="button is-link" onClick={this.submitForm}>Submit</button>
+                            <button class="button is-link" onClick={this.submitForm}>Submit</button>
                         </Link>
                     </div>
                     <div class="control">
@@ -132,7 +136,7 @@ class AddSubmission extends Component {
                                 type: this.props.match.params.type
                             }
                         }}>
-                        <button class="button is-link is-light">Cancel</button>
+                            <button class="button is-link is-light">Cancel</button>
                         </Link>
                     </div>
                 </div>
@@ -142,4 +146,4 @@ class AddSubmission extends Component {
     }
 }
 
-export default withAuthenticator(AddSubmission, {includeGreetings: false});
+export default withAuthenticator(AddSubmission, { includeGreetings: false });

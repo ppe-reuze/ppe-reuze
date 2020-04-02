@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function SelectPPE() {
     return (
-        <div className="container has-text-centered">
+        <div className="container has-text-centered app-content">
             <h1 className="title">What would you like to reuse?</h1>
             <div className="columns is-vcentered">
                 <div className="column is-one-quarter"></div>

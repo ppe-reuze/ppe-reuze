@@ -11,7 +11,7 @@ export default function Gloves() {
 
 function TypeOfGloves() {
     return (
-        <div className="container has-text-centered">
+        <div className="container has-text-centered app-content">
             <h1 className="title">What kind of gloves do you have?</h1>
             <div className="columns">
                 <div className="column">
