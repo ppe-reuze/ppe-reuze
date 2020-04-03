@@ -6,16 +6,16 @@ import config from '../aws-exports';
 import UserContext from './UserContext';
 Amplify.configure(config)
 
-const addSubmission = `mutation createTodo($username:String! $title: String! $description: String! $equipment: String!) {
+const addSubmission = `mutation createSubmission($username:String! $title: String! $description: String! $equipment: String! $supplies: String $source: String) {
     createSubmission(input:{
       username:$username
       title:$title
       description:$description
       equipment:$equipment
+      supplies:$supplies
+      source:$source
     }){
       id
-      username
-      description
     }
   }`;
 
@@ -28,11 +28,12 @@ class AddSubmission extends Component {
         this.state = {
             title: "",
             description: "",
-            type: ""
+            type: "",
+            supplies: "",
+            source: ""
         }
 
-        this.updateDescription = this.updateDescription.bind(this);
-        this.updateTitle = this.updateTitle.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
 
     componentDidMount() {
@@ -51,19 +52,20 @@ class AddSubmission extends Component {
             username: user.username,
             title: this.state.title,
             description: this.state.description,
-            equipment: this.state.type
+            equipment: this.state.type,
+            supplies: this.state.supplies,
+            source: this.state.source
         };
 
-        const newSubmission = await API.graphql(graphqlOperation(addSubmission, submissionDetails));
-        console.log(newSubmission)
+        await API.graphql(graphqlOperation(addSubmission, submissionDetails));
     };
 
-    updateTitle(event) {
-        this.setState({ title: event.target.value });
-    }
-
-    updateDescription(event) {
-        this.setState({ description: event.target.value });
+    handleChange(event) {
+        const value = event.target.value;
+        this.setState({
+            ...this.state,
+            [event.target.name]: value
+        });
     }
 
     submitForm = async (e) => {
@@ -97,28 +99,28 @@ class AddSubmission extends Component {
                 <div className="field">
                     <label className="label">Descriptive title</label>
                     <div className="control">
-                        <input className="input has-text-black" type="text" value={this.state.title} onChange={this.updateTitle} />
+                        <input className="input has-text-black" name="title" type="text" value={this.state.title} onChange={this.handleChange} />
                     </div>
                 </div>
 
                 <div className="field">
-                    <label className="label">Equipment needed</label>
+                    <label className="label">Supplies needed</label>
                     <div className="control">
-                        <input className="input has-text-black" type="text" />
+                        <input className="input has-text-black" type="text" name="supplies" value={this.state.supplies} onChange={this.handleChange} />
                     </div>
                 </div>
 
                 <div className="field">
-                    <label className="label">Steps to perform</label>
+                    <label className="label">Description of process &amp; steps to perform</label>
                     <div className="control">
-                        <input className="textarea has-text-black" type="text" value={this.state.description} onChange={this.updateDescription} />
+                        <input className="textarea has-text-black" type="text" name="description" value={this.state.description} onChange={this.handleChange} />
                     </div>
                 </div>
 
                 <div className="field">
-                    <label className="label">Source / Link to Evidence</label>
+                    <label className="label">Source or link to evidence</label>
                     <div className="control">
-                        <input className="input has-text-black" type="text" />
+                        <input className="input has-text-black" type="text" name="source" value={this.state.source} onChange={this.handleChange} />
                     </div>
                 </div>
 

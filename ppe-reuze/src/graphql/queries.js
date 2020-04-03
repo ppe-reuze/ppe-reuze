@@ -9,6 +9,8 @@ export const getSubmission = /* GraphQL */ `
       title
       description
       equipment
+      supplies
+      source
       votes
     }
   }
@@ -26,6 +28,8 @@ export const listSubmissions = /* GraphQL */ `
         title
         description
         equipment
+        supplies
+        source
         votes
       }
       nextToken

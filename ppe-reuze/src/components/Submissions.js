@@ -33,6 +33,8 @@ class Submissions extends React.Component {
             title
             votes
             equipment
+            supplies
+            source
           }
         }
       }`;
@@ -148,10 +150,9 @@ class Submissions extends React.Component {
                                                             </div>
                                                         </div>
                                                         <div className="content">
-                                                            <p><strong>Equipment Needed:</strong> {item.equipment}</p>
-                                                            <p><strong>Steps:</strong> {item.description}</p>
-                                                            <br />
-                                                            <p><strong>Source</strong>: Self</p>
+                                                            <p><strong>Supplies Needed:</strong> {item.supplies}</p>
+                                                            <p><strong>Description/Steps:</strong> {item.description}</p>
+                                                            <p><strong>Source:</strong> {item.source}</p>
                                                         </div>
                                                     </div>
                                                     <footer className="card-footer">

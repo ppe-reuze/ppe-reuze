@@ -9,6 +9,8 @@ export const onCreateSubmission = /* GraphQL */ `
       title
       description
       equipment
+      supplies
+      source
       votes
     }
   }
@@ -21,6 +23,8 @@ export const onUpdateSubmission = /* GraphQL */ `
       title
       description
       equipment
+      supplies
+      source
       votes
     }
   }
@@ -33,6 +37,8 @@ export const onDeleteSubmission = /* GraphQL */ `
       title
       description
       equipment
+      supplies
+      source
       votes
     }
   }

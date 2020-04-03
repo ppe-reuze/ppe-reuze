@@ -3,6 +3,8 @@ type Submission @model {
   username: String!
   title: String!
   description: String!
-  equipment: String!
+  equipment: String
+  supplies: String
+  source: String
   votes: Int
 }
