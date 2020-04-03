@@ -36,8 +36,12 @@ class AddSubmission extends Component {
     }
 
     componentDidMount() {
-        const { type } = this.props.location.state;
-        this.setState({ type: type });
+        if(this.props.location.state){
+            const { type } = this.props.location.state;
+            this.setState({ type: type });
+        }else{
+            this.props.history.push('/start');
+        }
     }
 
     submissionMutation = async () => {
