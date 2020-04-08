@@ -156,9 +156,9 @@ class Submissions extends React.Component {
                                                         </div>
                                                     </div>
                                                     <footer className="card-footer">
-                                                        <a href="#" className="card-footer-item" onClick={this.upvote}><i className="fas fa-thumbs-up"></i></a>
-                                                        <a href="#" className="card-footer-item">{this.state.votes}</a>
-                                                        <a href="#" className="card-footer-item" onClick={this.downvote}><i className="fas fa-thumbs-down"></i></a>
+                                                        <a className="card-footer-item" onClick={this.upvote}><i className="fas fa-thumbs-up"></i></a>
+                                                        <a className="card-footer-item">{this.state.votes}</a>
+                                                        <a className="card-footer-item" onClick={this.downvote}><i className="fas fa-thumbs-down"></i></a>
                                                     </footer>
                                                 </div>
                                         )
