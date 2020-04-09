@@ -6,6 +6,7 @@ export default function Home() {
         <section className="hero is-info is-large">
             <div class="hero-body">
                 <div className="container">
+                    <img src="reuze.png" width="150" />
                     <h1 className="title">Reusing &amp; sanitizing PPE</h1>
                     <h2 className="subtitle">Reuze is a platform for healthcare professionals to easily access community-sourced, evidence based strategies for sanitizing personal protect equipment in the COVID-19 epidemic.</h2>
                     <h2 className="subtitle">If you're a healthcare professional, sign up to submit your own strategies.</h2>
