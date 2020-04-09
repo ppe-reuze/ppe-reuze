@@ -12,7 +12,6 @@ import awsconfig from './aws-exports';
 
 // components
 import Navbar from './components/Navbar';
-import Footer from './components/Footer';
 import Home from './components/Home';
 import Masks from './components/Masks';
 import Gloves from './components/Gloves';
@@ -46,7 +45,6 @@ class App extends React.Component {
               <Route exact path="/submissions/:type" component={Submissions} />
               <Route exact path="/addsubmission" component={AddSubmission} />
             </Switch>
-            <Footer />
           </Router>
         </div>
       </UserProvider>
