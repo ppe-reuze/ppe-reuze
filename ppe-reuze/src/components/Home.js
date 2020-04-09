@@ -8,11 +8,14 @@ export default function Home() {
                 <div className="container">
                     <img src="reuze.png" width="150" />
                     <h1 className="title">Reusing &amp; sanitizing PPE</h1>
-                    <h2 className="subtitle">Reuze is a platform for healthcare professionals to easily access community-sourced, evidence based strategies for sanitizing personal protect equipment in the COVID-19 epidemic.</h2>
-                    <h2 className="subtitle">If you're a healthcare professional, sign up to submit your own strategies.</h2>
+                    <h2 className="subtitle">Reuze is an app for healthcare professionals to easily access community-sourced, evidence based strategies for sanitizing personal protect equipment in the COVID-19 epidemic. As a verified healthcare professional, you can also submit your own strategies.</h2>
                     <Link to="/start">
                         <button className="button is-rounded">Get Started</button>
                     </Link>
+                    <br />
+                    <br />
+                    <br />
+                    <p>A <a href="https://datavant.com/pandemic-response-hackathon/" style={{color: "#FFF", textDecoration: "underline"}}>Pandemic Response Hackathon</a> Spotlight Project.</p>
                 </div>
             </div>
         </section>
