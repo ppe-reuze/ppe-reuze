@@ -28,7 +28,7 @@ class Navbar extends React.Component {
                         <div className="container">
                             <div className="navbar-brand">
                                 <Link to="/" className="navbar-item">
-                                        <i className="fas fa-head-side-mask fa-lg"></i>&nbsp;<span className="title">REUZE</span>
+                                <img src="reuze.png" />&nbsp;<span className="title">REUZE</span>
                                 </Link>
                                 <span className="navbar-burger burger" data-target="navbarMenuHeroC">
                                     <span></span>
