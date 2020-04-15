@@ -15,8 +15,8 @@ export default function Home() {
                     <br />
                     <br />
                     <br />
-                    <p>A <a href="https://datavant.com/pandemic-response-hackathon/" style={{color: "#FFF", textDecoration: "underline"}}>Pandemic Response Hackathon</a> Spotlight Project.</p>
-                </div>
+                    <a href="https://datavant.com/pandemic-response-hackathon/" target="_blank"><img src="hackathon_ribbon.png" width="300" /></a>
+                    </div>
             </div>
         </section>
     )
