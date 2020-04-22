@@ -2,9 +2,9 @@ import React from 'react';
 import './App.sass'
 
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route
+	BrowserRouter as Router,
+	Switch,
+	Route
 } from "react-router-dom";
 
 import Amplify from 'aws-amplify';
@@ -28,28 +28,28 @@ Amplify.configure(awsconfig);
 
 class App extends React.Component {
 
-  render() {
-    return (
-      <UserProvider>
-        <div className="App">
-          <Router>
-            <Navbar />
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/start" component={SelectPPE} />
-              <Route exact path="/masks" component={Masks} />
-              <Route exact path="/gloves" component={Gloves} />
-              <Route exact path="/gowns" component={Gowns} />
-              <Route exact path="/submissions" component={Submissions} />
-              <Route exact path="/submissions/:type" component={Submissions} />
-              <Route exact path="/addsubmission" component={AddSubmission} />
-            </Switch>
-          </Router>
-        </div>
-      </UserProvider>
-    );
-  }
+	render() {
+		return (
+			<UserProvider>
+				<div className="App">
+					<Router>
+						<Navbar />
+						<Switch>
+							<Route exact path="/" component={Home} />
+							<Route exact path="/login" component={Login} />
+							<Route exact path="/start" component={SelectPPE} />
+							<Route exact path="/masks" component={Masks} />
+							<Route exact path="/gloves" component={Gloves} />
+							<Route exact path="/gowns" component={Gowns} />
+							<Route exact path="/submissions" component={Submissions} />
+							<Route exact path="/submissions/:type" component={Submissions} />
+							<Route exact path="/addsubmission" component={AddSubmission} />
+						</Switch>
+					</Router>
+				</div>
+			</UserProvider>
+		);
+	}
 }
 
 App.contextType = UserContext;
