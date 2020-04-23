@@ -12,7 +12,7 @@ export default function Gowns() {
 				<p>Alternatives to paper or plastic gowns include patient gowns, disposable lab coats, and disposable coveralls. Cloth gowns may be used as well.</p>
 			</div>
 			<Link to="/">
-				<button className="button is-rounded is-info">
+				<button className="button is-rounded">
 					<i class="fas fa-arrow-left"></i>&nbsp;<span>Back</span>
 				</button>
 			</Link>

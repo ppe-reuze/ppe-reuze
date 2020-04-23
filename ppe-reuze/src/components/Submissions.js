@@ -108,6 +108,8 @@ class Submissions extends React.Component {
 					<div className="columns">
 						<div className="column">
 
+						<div className="columns">
+						<div className="column">
 							<div className="title">
 								<Link to="/start">
 									<button className="button is-rounded">
@@ -115,9 +117,18 @@ class Submissions extends React.Component {
 									</button>
 								</Link>
 							</div>
+						</div>
+
+						<div className="column">
 							<div className="container has-text-centered">
 								<h1 className="title">{this.title(this.props.match.params.type)}</h1>
 							</div>
+						</div>
+						
+						<div className="column"></div>
+
+						</div>
+
 							<br /><br />
 
 							<div>

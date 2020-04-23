@@ -3,8 +3,14 @@ import { Link, withRouter } from 'react-router-dom';
 import { Auth } from 'aws-amplify';
 import UserContext, { UserConsumer } from './UserContext';
 
-
 class Navbar extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			isBurgerMenuOpen: false
+		}
+	}
+
 	static contextType = UserContext;
 
 	logout = async (event) => {
@@ -20,6 +26,10 @@ class Navbar extends React.Component {
 		}
 	}
 
+	toggleBurgerMenu = () => {
+		this.setState(prevState => ({ isBurgerMenuOpen: !prevState.isBurgerMenuOpen }));
+	}
+
 	render() {
 		return (
 			<UserConsumer>
@@ -30,18 +40,18 @@ class Navbar extends React.Component {
 								<Link to="/" className="navbar-item">
 									<span className="title">REUZE</span>
 								</Link>
-								<span className="navbar-burger burger" data-target="navbarMenuHeroC">
-									<span></span>
-									<span></span>
-									<span></span>
-								</span>
+								<a role="button" className={`navbar-burger ${this.state.isBurgerMenuOpen ? "is-active" : ""}`} onClick={this.toggleBurgerMenu} aria-label="menu" aria-expanded="false">
+									<span aria-hidden="true"></span>
+									<span aria-hidden="true"></span>
+									<span aria-hidden="true"></span>
+								</a>
 							</div>
-							<div id="navbarMenuHeroC" className="navbar-menu">
+							<div className={`navbar-menu ${this.state.isBurgerMenuOpen ? "is-active" : ""}`}>
 								<div className="navbar-end">
 									<div className="navbar-item">
 										{isLoggedIn && user ? (
 											<div>
-												<button className="button is-rounded" style={{ marginRight: "0.5em" }}>{user.username}'s account</button>
+												<button className="button is-rounded" style={{ marginRight: "0.5em" }}>My Account</button>
 												<Link to="/" onClick={this.logout}>
 													<button className="button is-rounded is-primary">Log Out</button>
 												</Link>
