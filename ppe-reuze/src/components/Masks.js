@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import n95_logo from './images/N95.png';
+import surgical_mask from './images/SurgicalMask.png';
 
 export default function Masks() {
 	return (
@@ -8,18 +10,18 @@ export default function Masks() {
 				<h1 className="title">What kind of mask do you have?</h1>
 				<div className="columns">
 					<div className="column">
-						<Link to="/submissions/n95">
+						<Link to="/masks/n95">
 							<div className="box">
-								<img src="N95.png" width="50" alt="N95 mask" />
+								<img src={n95_logo} width="50" alt="N95 mask" />
 								<br />
                         N95 Respirator
                         </div>
 						</Link>
 					</div>
 					<div className="column">
-						<Link to="/submissions/surgical">
+						<Link to="/masks/surgical">
 							<div className="box">
-								<img src="SurgicalMask.png" width="100" alt="Surgical Mask" />
+								<img src={surgical_mask} width="100" alt="Surgical Mask" />
 								<br />
                         Surgical Mask</div>
 						</Link>

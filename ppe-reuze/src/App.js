@@ -15,7 +15,6 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Masks from './components/Masks';
 import Gloves from './components/Gloves';
-import Gowns from './components/Gowns';
 import Submissions from './components/Submissions';
 import AddSubmission from './components/AddSubmission';
 import SelectPPE from './components/SelectPPE';
@@ -40,10 +39,10 @@ class App extends React.Component {
 							<Route exact path="/start" component={SelectPPE} />
 							<Route exact path="/masks" component={Masks} />
 							<Route exact path="/gloves" component={Gloves} />
-							<Route exact path="/gowns" component={Gowns} />
-							<Route exact path="/submissions" component={Submissions} />
-							<Route exact path="/submissions/:type" component={Submissions} />
-							<Route exact path="/addsubmission" component={AddSubmission} />
+							<Route exact path="/submit" component={AddSubmission} />
+							<Route exact path="/masks/:type" component={Submissions} />
+							<Route exact path="/gloves/:type" component={Submissions} />
+							<Route exact path="/gowns/:type" component={Submissions} />
 						</Switch>
 					</Router>
 				</div>

@@ -140,7 +140,7 @@ class Submissions extends React.Component {
 							<div>
 								<h1 className="subtitle">User Submitted &nbsp; &nbsp;
                         <Link to={{
-										pathname: '/addsubmission',
+										pathname: '/submit',
 										state: {
 											type: this.props.match.params.type
 										}
