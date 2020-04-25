@@ -139,7 +139,7 @@ class Submissions extends React.Component {
 							<br /><br />
 
 							<div>
-								<h1 className="subtitle">Reuze Recommendation</h1>
+								<h1 className="subtitle">Reuze Recommendations</h1>
 								{this.recommendation(this.props.type)}
 							</div>
 							<br /><br />
