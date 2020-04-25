@@ -13,11 +13,11 @@ import awsconfig from './aws-exports';
 // components
 import Navbar from './components/Navbar';
 import Home from './components/Home';
-import Masks from './components/Masks';
-import Gloves from './components/Gloves';
+import MaskMenu from './components/menus/MaskMenu';
+import GloveMenu from './components/menus/GloveMenu';
 import Submissions from './components/Submissions';
-import AddSubmission from './components/AddSubmission';
-import SelectPPE from './components/SelectPPE';
+import Submit from './components/Submit';
+import Start from './components/Start';
 import Login from './components/Login';
 
 // context
@@ -36,13 +36,15 @@ class App extends React.Component {
 						<Switch>
 							<Route exact path="/" component={Home} />
 							<Route exact path="/login" component={Login} />
-							<Route exact path="/start" component={SelectPPE} />
-							<Route exact path="/masks" component={Masks} />
-							<Route exact path="/gloves" component={Gloves} />
-							<Route exact path="/submit" component={AddSubmission} />
-							<Route exact path="/masks/:type" component={Submissions} />
-							<Route exact path="/gloves/:type" component={Submissions} />
-							<Route exact path="/gowns/:type" component={Submissions} />
+							<Route exact path="/start" component={Start} />
+							<Route exact path="/submit" component={Submit} />
+							<Route exact path="/masks" component={MaskMenu} />
+							<Route exact path="/gloves" component={GloveMenu} />
+							<Route exact path="/masks/n95" render={(props) => <Submissions {...props} type={"n95"} />} />
+							<Route exact path="/masks/surgical" render={(props) => <Submissions {...props} type={"surgical"} />} />
+							<Route exact path="/gloves/latex" render={(props) => <Submissions {...props} type={"latex"} />} />
+							<Route exact path="/gloves/nitrile" render={(props) => <Submissions {...props} type={"nitrile"} />} />
+							<Route exact path="/gowns" render={(props) => <Submissions {...props} type={"gowns"} />} />
 						</Switch>
 					</Router>
 				</div>

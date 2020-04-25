@@ -20,7 +20,7 @@ const addSubmission = `mutation createSubmission($username:String! $title: Strin
   }`;
 
 
-class AddSubmission extends Component {
+class Submit extends Component {
 	static contextType = UserContext;
 
 	constructor(props) {
@@ -152,4 +152,4 @@ class AddSubmission extends Component {
 	}
 }
 
-export default withAuthenticator(AddSubmission, { includeGreetings: false });
+export default withAuthenticator(Submit, { includeGreetings: false });

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function SelectPPE() {
+export default function Start() {
 	return (
 		<div className="container has-text-centered app-content">
 			<h1 className="title">What would you like to reuse?</h1>
@@ -33,7 +33,7 @@ export default function SelectPPE() {
 
 						<br />
 
-						<Link to="/gowns/gowns">
+						<Link to="/gowns">
 							<button className="button is-rounded is-fullwidth is-large">
 								<span class="icon is-small">
 									<i class="fas fa-user-nurse"></i>

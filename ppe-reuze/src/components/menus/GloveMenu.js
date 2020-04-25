@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import latex_logo from './images/latex_glove.png';
-import nitrile_logo from './images/nitrile_glove.png';
+import latex_logo from '../images/latex_glove.png';
+import nitrile_logo from '../images/nitrile_glove.png';
 
 export default function Gloves() {
 	return (

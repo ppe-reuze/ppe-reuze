@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import n95_logo from './images/N95.png';
-import surgical_mask from './images/SurgicalMask.png';
+import n95_logo from '../images/N95.png';
+import surgical_mask from '../images/SurgicalMask.png';
 
 export default function Masks() {
 	return (

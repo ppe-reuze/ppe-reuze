@@ -3,6 +3,13 @@ import { Link } from 'react-router-dom';
 import Amplify, { API, graphqlOperation } from 'aws-amplify';
 import config from '../aws-exports';
 import UserContext from './UserContext';
+
+import N95 from './recommendations/N95';
+import SurgicalMask from './recommendations/SurgicalMask';
+import LatexGloves from './recommendations/LatexGloves';
+import NitrileGloves from './recommendations/NitrileGloves';
+import Gowns from './recommendations/Gowns';
+
 Amplify.configure(config)
 
 class Submissions extends React.Component {
@@ -23,7 +30,7 @@ class Submissions extends React.Component {
 	listSubmissions = `query listSubmissions {
         listSubmissions(filter: {
             equipment: {
-              contains: "${this.props.match.params.type}"
+              contains: "${this.props.type}"
             }
           }){
           items{
@@ -108,32 +115,32 @@ class Submissions extends React.Component {
 					<div className="columns">
 						<div className="column">
 
-						<div className="columns">
-						<div className="column">
-							<div className="title">
-								<Link to="/start">
-									<button className="button is-rounded">
-										<i className="fas fa-arrow-left"></i>&nbsp;<span>Back</span>
-									</button>
-								</Link>
-							</div>
-						</div>
+							<div className="columns">
+								<div className="column">
+									<div className="title">
+										<Link to="/start">
+											<button className="button is-rounded">
+												<i className="fas fa-arrow-left"></i>&nbsp;<span>Back</span>
+											</button>
+										</Link>
+									</div>
+								</div>
 
-						<div className="column">
-							<div className="container has-text-centered">
-								<h1 className="title">{this.title(this.props.match.params.type)}</h1>
-							</div>
-						</div>
-						
-						<div className="column"></div>
+								<div className="column">
+									<div className="container has-text-centered">
+										<h1 className="title">{this.title(this.props.type)}</h1>
+									</div>
+								</div>
 
-						</div>
+								<div className="column"></div>
+
+							</div>
 
 							<br /><br />
 
 							<div>
 								<h1 className="subtitle">Reuze Recommendation</h1>
-								{this.recommendation(this.props.match.params.type)}
+								{this.recommendation(this.props.type)}
 							</div>
 							<br /><br />
 
@@ -142,7 +149,7 @@ class Submissions extends React.Component {
                         <Link to={{
 										pathname: '/submit',
 										state: {
-											type: this.props.match.params.type
+											type: this.props.type
 										}
 									}}>
 										<button className="button is-rounded is-small">Submit your own</button>
@@ -184,9 +191,6 @@ class Submissions extends React.Component {
 	}
 }
 
-
-// Recommendations start here
-
 function NoSubmissions() {
 	return (
 		<div className="card">
@@ -198,103 +202,5 @@ function NoSubmissions() {
 		</div>
 	);
 }
-
-function N95() {
-	return (
-		<div className="card">
-			<div className="card-content">
-				<div className="media">
-					<div className="media-content">
-						<p className="title is-4 has-text-black">Heat Treatment</p>
-						<p className="subtitle is-6 has-text-black">Reuze Team</p>
-					</div>
-				</div>
-				<div className="content">
-					<p><strong>Equipment Needed:</strong> Oven</p>
-            Suspend the masks in hot air (e.g. oven) at 70C for 30 minutes without contacting or putting the masks too close to a metal surface.
-                <br /><br />
-					<p><strong>Source</strong>: <a href="https://utrf.tennessee.edu/information-faqs-performance-protection-sterilization-of-masks-against-covid-19">https://utrf.tennessee.edu/information-faqs-performance-protection-sterilization-of-masks-against-covid-19</a></p>
-				</div>
-			</div>
-		</div>
-	)
-}
-
-function SurgicalMask() {
-	return (
-		<div className="card">
-			<div className="card-content">
-				<div className="media">
-					<div className="media-content">
-						<p className="title is-4 has-text-black">Don't Reuse</p>
-						<p className="subtitle is-6 has-text-black">Reuze Team</p>
-					</div>
-				</div>
-				<div className="content">
-					Surgical masks may be worn continuously until visibly soiled or moist from respirations.
-            They should be carefully folded so that the outer surface is held inward and against itself to reduce contact with the outer surface during storage. The folded mask can be stored between uses in a clean, sealable paper bag or breathable container.<br />
-				</div>
-			</div>
-		</div>
-	)
-}
-
-function LatexGloves() {
-	return (
-		<div className="card">
-			<div className="card-content">
-				<div className="media">
-					<div className="media-content">
-						<p className="title is-4 has-text-black">Hibiscrub (Chlorhexidine)</p>
-						<p className="subtitle is-6 has-text-black">Reuze Team</p>
-					</div>
-				</div>
-				<div className="content">
-					<p><strong>Equipment Needed:</strong> Hibiscrub (Chlorhexidine)</p>
-            Wet gloved hands, add a small amount of hibiscrub, wash hands together for 1 minute.
-            Applies to Ansell Medical 'Medi-Grip', Regent 'Biogel D'.<br />
-				</div>
-			</div>
-		</div>
-	)
-}
-
-function NitrileGloves() {
-	return (
-		<div className="card">
-			<div className="card-content">
-				<div className="media">
-					<div className="media-content">
-						<p className="title is-4 has-text-black">Alcohol Based Hand Rub</p>
-						<p className="subtitle is-6 has-text-black">Reuze Team</p>
-					</div>
-				</div>
-				<div className="content">
-					<p><strong>Equipment Needed:</strong> Alcohol-Based Hand Sanitizer</p>
-					<strong>Steps:</strong> Take a small amount, apply to gloved hands, rub hands together until dry (typically 20-30 seconds)<br />
-				</div>
-			</div>
-		</div>
-	)
-}
-
-function Gowns() {
-	return (
-		<div className="card">
-			<div className="card-content">
-				<div className="media">
-					<div className="media-content">
-						<p className="title is-4 has-text-black">Don't Reuse</p>
-						<p className="subtitle is-6 has-text-black">Reuze Team</p>
-					</div>
-				</div>
-				<div className="content">
-					Paper and plastic gowns can be reused as long as they are not visibly soiled. Alternatives to paper or plastic gowns include patient gowns, disposable lab coats, and disposable coveralls. Cloth gowns may be used as well.
-            </div>
-			</div>
-		</div>
-	)
-}
-
 
 export default Submissions;
