@@ -107,7 +107,9 @@ class Submissions extends React.Component {
 		}
 	};
 
+
 	render() {
+		const { isLoggedIn } = this.context;
 
 		return (
 			<div className="container app-content">
@@ -152,9 +154,9 @@ class Submissions extends React.Component {
 											type: this.props.type
 										}
 									}}>
-										<button className="button is-rounded is-small">Submit your own</button>
+										{ isLoggedIn? <button className="button is-rounded is-small">Submit your own</button> : "" }
 									</Link></h1>
-								{
+								{ isLoggedIn ? 
 									this.state.submissions.length === 0 ?
 										<NoSubmissions />
 										:
@@ -181,7 +183,8 @@ class Submissions extends React.Component {
 													</footer>
 												</div>
 											)
-										})}
+										})
+									: <NeedsLogIn /> }
 							</div>
 						</div>
 					</div>
@@ -197,6 +200,18 @@ function NoSubmissions() {
 			<div className="card-content">
 				<div className="content">
 					<p>No submissions yet.</p>
+				</div>
+			</div>
+		</div>
+	);
+}
+
+function NeedsLogIn() {
+	return (
+		<div className="card">
+			<div className="card-content">
+				<div className="content">
+					<p>Please <Link to="/login">log in</Link> to see user submissions or submit your own.</p>
 				</div>
 			</div>
 		</div>
